@@ -6,10 +6,12 @@ DOMMaster is a lightweight Javascript library that allows for easy HTML document
 
 ##API
 
-#$l(selector)
+##$l(selector)
 Accepts CSS selectors (string), native HTML elements, and functions.
 
 Examples:
+
+Given the following HTML snippet:
 
 ```    
   <div class="alphabet">
@@ -24,25 +26,34 @@ Examples:
         <li>G</li>
       </ul>
   </div>
+
 ```
+1.) CSS Selectors: returns array-like object of HTML nodes  
+```
+$l('ul') ==== DOMNodeCollection {nodes: Array[2]}
 
-Returns an array-like DOMaster object.
--HTML
+```
+2.) HTML elements: returns array-like object of HTML nodes
+```
+  node = let node = $l('ul').nodes[0]
+  $l(node) === DOMNodeCollection {nodes: Array[1]}
 
+```
+3.) Functions: Adds callback to DOM Content Loaded event handler if document has not yet loaded. Immediately calls the function otherwise. 
 
-#$l.extend()
-#$l.
+##$l.extend()
+##$l.
 
-#html()
-#empty()
-#append()
-#attr()
-#addClass()
-#removeClass()
-#toggleClass()
-#children()
-#parent()
-#on()
-#off()
-#find()
-#remove()
+##html()
+##empty()
+##append()
+##attr()
+##addClass()
+##removeClass()
+##toggleClass()
+##children()
+##parent()
+##on()
+##off()
+##find()
+##remove()
