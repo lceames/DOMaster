@@ -53,12 +53,12 @@ Performs an asynchronous HTTP (Ajax) request. Accepts an object containing setti
 
 Setting types:
 
-- [ ] url: String containing request url
-- [ ] method: String indicating HTTP request type. Defaults to "GET".
-- [ ] success: Callback triggered on 200 OK HTTP response
-- [ ] error: Callback triggered on all other HTTP responses
-- [ ] data: Data to be sent to the server. It is converted to query string, and in the case of GET requests, appended to the url.
-- [ ] contentType: specifies the type of data sent to the server. Defaults to the application/x-www-form-urlencoded; charset=UTF-8
+* url: String containing request url
+* method: String indicating HTTP request type. Defaults to "GET".
+* success: Callback triggered on 200 OK HTTP response
+* error: Callback triggered on all other HTTP responses
+* data: Data to be sent to the server. It is converted to query string, and in the case of GET requests, appended to the url.
+* contentType: specifies the type of data sent to the server. Defaults to the application/x-www-form-urlencoded; charset=UTF-8
 
 Example:
 
