@@ -1,0 +1,5 @@
+require('./snake');
+
+class View {
+
+}
