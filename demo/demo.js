@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const addLetter = () => {
   let lastLetter = $l('.letter-list').children().nodes.slice(-1)[0].innerHTML;
+  if (lastLetter === "Z") { return; }
   let nextLetter = ALPHABET[ALPHABET.findIndex((letter) => letter === lastLetter) + 1];
   $l('.letter-list').append(`<li>${nextLetter}</li>`);
 };
@@ -28,21 +29,20 @@ const emptyWordList = () => {
 };
 
 const addWord = (e) => {
-  let newWord = document.getElementById("new-word").value;
-  $l('.word-list').append(`<li>${newWord}</li>`);
+  e.preventDefault();
+  let newWord = $l("#new-word").nodes[0];
+  $l('.word-list').append(`<li id=${newWord.value}>${newWord.value}</li>`);
+  newWord.value = "";
 };
 
-const lookup = word =>   {
+const lookup = e =>   {
+  e.preventDefault();
+  let word = $l("#search-term").nodes[0].value;
   $l.ajax({
     method: "GET",
-    url: `https://od-api.oxforddictionaries.com/api/v1/en/${word}`,
+    url: `https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20170313T152554Z.0b456da16411c578.67f740729cb7755e9813041ce6a7ec8365bd5b09&lang=en-en&text=${word}`,
     success: displayDef,
     error: displayError,
-    headers: {
-      "app_id": "ca7530c5",
-      "app_key": "b612c55092620dfb9dcd3fd4ec3cf1d0"
-    },
-    withCredentials: true
   });
 };
 
