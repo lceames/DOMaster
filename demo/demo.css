@@ -1,0 +1,15 @@
+.content {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#letter-list, #word-list {
+  list-style: none;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DOMaster demo</title>
+    <script src="../lib/dom_master.js"></script>
+    <link rel="stylesheet" type="text/css" href="./demo.css">
+    <script src="./demo.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  </head>
+  <body>
+    <h1>DOMaster Demo</h1>
+
+    <div class="content">
+      <div class="letters">
+        <label>Letters</label>
+        <ul class="letter-list">
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>D</li>
+          <li>E</li>
+        </ul>
+
+        <button id="add-letter">Add a letter</button>
+        <button id="remove-letter">Remove a letter</button>
+      </div>
+
+      <div class="words">
+        <label>Words</label>
+
+        <ul class="word-list">
+          <li id="1">Lemon</li>
+          <li id="2">Fantastic</li>
+          <li id="3">Scrumptious</li>
+          <li id="4">Sour</li>
+        </ul>
+        <form id="add-word">
+          <label>
+            <input id="new-word" type="text" placeholder="Add a word"/>
+          </label>
+          <input type="submit"></input>
+        </form>
+        <button id="empty-word-list">Empty the list</button>
+      </div>
+
+      <div id="dictionary">
+        <h2>Fetch a definition</h2>
+        <form id="word-search">
+          <label>
+            <input type="text"/>
+          </label>
+          <input type="submit"></input>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
