@@ -2,33 +2,57 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="./lib/dom_master.js"></script>
+    <title>DOMaster demo</title>
+    <script src="../lib/dom_master.js"></script>
+    <link rel="stylesheet" type="text/css" href="./demo.css">
+    <script src="./demo.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
   </head>
   <body>
+    <h1>DOMaster Demo</h1>
 
-    <div class="alphabet">
-      <label>Letters</label>
-      <ul class="letters">
-        <li>A</li>
-        <li>B</li>
-        <li>C</li>
-        <li>D</li>
-        <li>E</li>
-        <li>F</li>
-        <li>G</li>
-      </ul>
+    <div class="content">
+      <div class="letters">
+        <label>Letters</label>
+        <ul class="letter-list">
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>D</li>
+          <li>E</li>
+        </ul>
 
-      <label>Words</label>
+        <button id="add-letter">Add a letter</button>
+        <button id="remove-letter">Remove a letter</button>
+      </div>
 
-      <ul class="word-list">
-        <li id="1">Lemon</li>
-        <li id="2">Fantastic</li>
-        <li id="3">Scrumptious</li>
-        <li id="4">Sour</li>
-      </ul>
+      <div class="words">
+        <label>Words</label>
 
-      <a href="https://www.merriam-webster.com/">Dictionary</a>
+        <ul class="word-list">
+          <li id="Lemon">Lemon</li>
+          <li id="Fantastic">Fantastic</li>
+          <li id="Scrumptious">Scrumptious</li>
+          <li id="Sour">Sour</li>
+        </ul>
+        <form id="add-word">
+          <label>
+            <input id="new-word" type="text" placeholder="Add a word"/>
+          </label>
+          <input type="submit"></input>
+        </form>
+        <button id="empty-word-list">Empty the list</button>
+      </div>
+
+      <div id="dictionary">
+        <h2>Fetch a definition</h2>
+        <form id="word-search">
+          <label>
+            <input id="search-term" type="text"/>
+          </label>
+          <input type="submit"></input>
+        </form>
+      </div>
     </div>
 
   </body>

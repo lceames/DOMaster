@@ -63,13 +63,13 @@ Setting types:
 Example:
 
 ```js
-  $l.ajax(
+  $l.ajax({
     method: "POST",
     url: "someurl.php",
     success: (response) => console.log(response),
     error: (error) => console.log(error),
     data: { time: "0300", location: "New York"}
-  )
+  })
 ```
 
 ##html([value])
