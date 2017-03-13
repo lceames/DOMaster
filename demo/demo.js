@@ -14,10 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const addLetter = () => {
-  let lastLetter = $l('.letter-list').children().nodes.slice(-1)[0].innerHTML;
-  if (lastLetter === "Z") { return; }
-  let nextLetter = ALPHABET[ALPHABET.findIndex((letter) => letter === lastLetter) + 1];
-  $l('.letter-list').append(`<li>${nextLetter}</li>`);
+  let lastLetterEl = $l('.letter-list').children().nodes.slice(-1)[0];
+
+  if (!lastLetterEl) {
+    $l('.letter-list').append(`<li>A</li>`);
+    return;
+  }
+  else if (lastLetterEl.innerHTML === "M") { return; }
+
+  let lastIndex = ALPHABET.findIndex((letter) => letter === lastLetterEl.innerHTML);
+
+  $l('.letter-list').append(`<li>${ALPHABET[lastIndex + 1]}</li>`);
 };
 
 const removeLetter = () => {
@@ -37,17 +44,20 @@ const addWord = (e) => {
 
 const lookup = e =>   {
   e.preventDefault();
-  let word = $l("#search-term").nodes[0].value;
+  let searchTerm = $l("#search-term").nodes[0].value.split(" ").join("+");
   $l.ajax({
     method: "GET",
-    url: `http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC`,
-    success: displayDef,
+    url: `http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=dc6zaTOxFJmzC`,
+    success: displayGif,
     error: displayError
   });
 };
 
-const displayDef = def => {
-  $l('#dictionary').append('<img></img>')
+const displayGif = gifData => {
+  let gif = JSON.parse(gifData).data[0];
+  let gifUrl = gif.images.fixed_height.url;
+  document.getElementById('gif').innerHTML = `<img src=${gifUrl}>`;
+  document.getElementById('search-term').value = "";
 };
 
 const displayError = error => {
