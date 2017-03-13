@@ -10,6 +10,6 @@ body {
   text-align: center;
 }
 
-#letter-list, #word-list {
+.letter-list, .word-list {
   list-style: none;
 }

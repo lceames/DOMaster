@@ -40,20 +40,16 @@ const lookup = e =>   {
   let word = $l("#search-term").nodes[0].value;
   $l.ajax({
     method: "GET",
-    url: `https://od-api.oxforddictionaries.com/api/v1/en/${word}`,
+    url: `http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC`,
     success: displayDef,
-    error: displayError,
-    headers: {
-      "app_id": "ca7530c5",
-      "app_key": "b612c55092620dfb9dcd3fd4ec3cf1d0"
-    }
+    error: displayError
   });
 };
 
 const displayDef = def => {
-  debugger
+  $l('#dictionary').append('<img></img>')
 };
 
 const displayError = error => {
-  debugger
+  $l('#dictionary').append("Invalid search");
 };
