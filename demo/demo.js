@@ -6,7 +6,7 @@ const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 document.addEventListener("DOMContentLoaded", () => {
   docReady = true;
   docReadyCallbacks.forEach( (cb) => cb() );
-  document.getElementById("word-search").addEventListener("submit", lookup);
+  // document.getElementById("word-search").addEventListener("submit", lookup);
   document.getElementById("add-word").addEventListener("submit", addWord);
   document.getElementById("add-letter").addEventListener("click", addLetter);
   document.getElementById("remove-letter").addEventListener("click", removeLetter);
