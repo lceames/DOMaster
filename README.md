@@ -4,7 +4,7 @@
 
 DOMMaster is a lightweight Javascript library that allows for easy HTML document traversal, manipulation, event handling, and Ajax request.
 
-[Demo](https://lceames.github.io)
+[Demo](https://lceames.github.io/DOMaster)
 
 ##API
 
