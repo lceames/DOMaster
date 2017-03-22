@@ -1,14 +1,14 @@
-#DOMaster
+# DOMaster
 
-##What is DOMaster?
+## What is DOMaster?
 
 DOMMaster is a lightweight Javascript library that allows for easy HTML document traversal, manipulation, event handling, and Ajax request.
 
 [Demo](https://lceames.github.io/DOMaster)
 
-##API
+## API
 
-##$l(selector)
+## $l(selector)
 Accepts CSS selectors (string), native HTML elements, and functions.
 
 Examples:
@@ -41,7 +41,7 @@ $l('ul') === DOMNodeCollection {nodes: Array[2]}
 ```
 3.) Functions: Adds callback to DOM Content Loaded event handler if document has not yet loaded. Otherwise, calls the function immediately.
 
-##$l.extend(target [,object1] [,objectN])
+## $l.extend(target [,object1] [,objectN])
 
 Merges the contents of two or more objects into the first objects.
 
@@ -49,7 +49,7 @@ Merges the contents of two or more objects into the first objects.
   $l.extend({"a": 1, "b": 2}, {"b": 3}) === Object {a: 1, b: 3}
 ```
 
-##$l.ajax(url [,settings])
+## $l.ajax(url [,settings])
 
 Performs an asynchronous HTTP (Ajax) request. Accepts an object containing settings, including a mandatory string containing the url to which the request is sent.
 
@@ -74,41 +74,41 @@ Example:
   })
 ```
 
-##html([value])
+## html([value])
 If passed an argument sets the inner html of selected nodes to value. Otherwise, returns inner html value of the first selected node.
 
-##empty()
+## empty()
 Sets the inner HTML of all selected nodes to an empty string.
 
-##append()
+## append()
 Inserts content to the end of each element in the set of matched elements. Takes HTML Element, a DOMNodeCollection element, or a plain string.
 
-##attr(attribute, [value])
+## attr(attribute, [value])
 If value is provided, sets the value of given attribute for all selected nodes. Else, return the value of given attribute at first selected node.
 
-##addClass(className)
+## addClass(className)
 Adds given className to class list of selected nodes.
 
-##removeClass(className)
+## removeClass(className)
 Removes given className from class list of selected nodes.
 
-##toggleClass(className)
+## toggleClass(className)
 Reverses the presence of given class for selected nodes. I.e: if class is present, removes it. If absent, adds it.
 
-##children()
+## children()
 Returns DOMNodeCollection of child nodes of all selected nodes. Does not return nested children.
 
-##parent()
+## parent()
 Returns DOMNodeCollection of parent nodes of all selected nodes.
 
-##on(eventName, callback)
+## on(eventName, callback)
 Adds given callback to given event listener for all selected nodes.
 
-##off(eventName)
+## off(eventName)
 Removes all callbacks for given event listener for all selected nodes.
 
-##find(selected)
+## find(selected)
 Returns all nested child nodes that match given selector.
 
-##remove()
+## remove()
 Removes all selected nodes from the DOM.
